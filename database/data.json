@@ -1,0 +1,115 @@
+{
+    "home": {
+        "hero_title": "The Power of Microbes",
+        "hero_subtitle": "We are committed to helping growers improve farm production, resiliency and profitability while sustaining the health of soils and ecosystems.",
+        "hero_button_text": "Explore Products",
+        "hero_button_link": "/shop",
+        "story_title": "Derived From Nature Itself",
+        "story_subtitle": "Our Technology"
+    },
+    "shop": {
+        "title": "Biological Shop",
+        "subtitle": "Approved in 15+ States",
+        "badge": "Direct To Farm"
+    },
+    "products": [
+        {
+            "id": "bc-01",
+            "name": "Biome Care",
+            "price": "249.00",
+            "image": "https://renu-biome.com/cdn/shop/files/biome_care.png?v=1777261439",
+            "video": "",
+            "description": "Improves soil health, microbiology, water retention, and nutrient availability.",
+            "rate": "1-2 qts / Acre",
+            "benefit": "Improves Soil Microbiology",
+            "ingredients": "Soy Protein, K-Acetate, Kelp",
+            "size": "2.5 Gallon Jug",
+            "badge": "Soil Health",
+            "theme": "0E8028"
+        },
+        {
+            "id": "ss-02",
+            "name": "Sun Skreen",
+            "price": "199.00",
+            "image": "https://renu-biome.com/cdn/shop/files/sunskreen_af5b6f24-d7f3-4a2e-acc5-8daff9c7fa49.png?v=1776603808",
+            "video": "",
+            "description": "Organic flowable micronized dispersion of calcium carbonate. Protects from sunburn.",
+            "rate": "0.5-1 qt / Acre",
+            "benefit": "Improves Shelf Life & Color",
+            "ingredients": "Calcium Carbonate (50%)",
+            "size": "2.5 Gallon Jug",
+            "badge": "OMRI Listed",
+            "theme": "eab308"
+        },
+        {
+            "id": "kr-03",
+            "name": "K-Rush",
+            "price": "229.00",
+            "image": "https://renu-biome.com/cdn/shop/files/krush4.png?v=1777261875",
+            "video": "",
+            "description": "Highly soluble potassium for maximum plant intake, improving brix and frost resistance.",
+            "rate": "1-2 qts / Acre",
+            "benefit": "Improves Brix & Fruit Color",
+            "ingredients": "Soluble Potash (K2O) 24%",
+            "size": "2.5 Gallon Jug",
+            "badge": "Growth Amplified",
+            "theme": "ef4444"
+        },
+        {
+            "id": "ns-04",
+            "name": "Nitrogen Stabilizer",
+            "price": "289.00",
+            "image": "https://renu-biome.com/cdn/shop/files/n_care.png?v=1777261802",
+            "video": "",
+            "description": "Excellent nitrification inhibitor, reduces greenhouse gas emissions, improves soil moisture.",
+            "rate": "1-2 qts / Acre",
+            "benefit": "Increases Nutrient Availability",
+            "ingredients": "Nitrogen 23%, Neem, Karanja",
+            "size": "2.5 Gallon Jug",
+            "badge": "Nitrification Inhibitor",
+            "theme": "FF6B00"
+        },
+        {
+            "id": "no-05",
+            "name": "100% Neem Oil",
+            "price": "159.00",
+            "image": "https://renu-biome.com/cdn/shop/files/siri_neem.png?v=1744905929",
+            "video": "",
+            "description": "Highly compatible & water soluble Fungicide, Miticide, Insecticide, and Nematicide.",
+            "rate": "0.5-1 qt / Acre",
+            "benefit": "All natural, no additives",
+            "ingredients": "Cold Pressed Neem Oil",
+            "size": "1 Gallon Jug",
+            "badge": "EPA Listed",
+            "theme": "16a34a"
+        },
+        {
+            "id": "bb-06",
+            "name": "Bee Bloom",
+            "price": "189.00",
+            "image": "https://renu-biome.com/cdn/shop/files/Bee_bloom.png?v=1777261333",
+            "video": "",
+            "description": "Natural honeybee attractant with plant-based essential oils & pheromones.",
+            "rate": "8 oz / Acre (At bloom)",
+            "benefit": "Improves Pollination",
+            "ingredients": "Vartol, Lemon Grass, Spearmint",
+            "size": "1 Gallon Jug",
+            "badge": "Pheromones",
+            "theme": "FFB000"
+        },
+        {
+            "id": "ko-07",
+            "name": "Karanja Oil",
+            "price": "210.00",
+            "image": "https://renu-biome.com/cdn/shop/files/karanja.png?v=1744905965",
+            "video": "",
+            "description": "Soil nutrient synergist that improves organic matter and aids in erosion control.",
+            "rate": "1-2 qts / Acre",
+            "benefit": "Erosion Control & Nutrients",
+            "ingredients": "80% Karanja Oil, Soap Nut",
+            "size": "10 lb Bucket",
+            "badge": "Soil Synergist",
+            "theme": "8B5E34"
+        }
+    ]
+}

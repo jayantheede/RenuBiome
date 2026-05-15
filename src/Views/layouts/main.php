@@ -110,6 +110,20 @@
     
     <!-- Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Lenis for Smooth Scrolling -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    
+    <!-- Fast Response: Speculation Rules for Prerendering -->
+    <script type="speculationrules">
+    {
+      "prerender": [{
+        "source": "document",
+        "where": {"and": [{"href_matches": "/*"}]},
+        "eagerness": "moderate"
+      }]
+    }
+    </script>
 </head>
 <body class="bg-[#060B09] text-white font-sans overflow-x-hidden antialiased selection:bg-eco-green selection:text-eco-dark">
     

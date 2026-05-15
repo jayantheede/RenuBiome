@@ -1,3 +1,11 @@
+<?php
+$cmsData = [];
+$dataFile = __DIR__ . '/../../../database/data.json';
+if (file_exists($dataFile)) {
+    $cmsData = json_decode(file_get_contents($dataFile), true);
+}
+$homeData = $cmsData['home'] ?? [];
+?>
 <!-- Hero Section -->
 <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-[#060B09]">
     <!-- Cinematic Video Background -->
@@ -10,16 +18,16 @@
 
     <div class="container mx-auto px-6 relative z-10 text-center flex flex-col items-center">
         <h1 class="text-6xl md:text-8xl lg:text-9xl font-display font-bold tracking-tight mb-8 hero-text drop-shadow-2xl hero-element">
-            <span class="text-white">The Power of Microbes</span>
+            <span class="text-white"><?= htmlspecialchars($homeData['hero_title'] ?? 'The Power of Microbes') ?></span>
         </h1>
         
         <p class="max-w-3xl text-lg md:text-xl text-gray-300 mb-12 hero-element font-light leading-relaxed drop-shadow-lg">
-            We are committed to helping growers improve farm production, resiliency and profitability while sustaining the health of soils and ecosystems.
+            <?= htmlspecialchars($homeData['hero_subtitle'] ?? 'We are committed to helping growers improve farm production, resiliency and profitability while sustaining the health of soils and ecosystems.') ?>
         </p>
         
         <div class="flex flex-col sm:flex-row gap-6 hero-element">
-            <a href="/shop" class="px-10 py-4 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-black transition-all duration-300 tracking-wide uppercase shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]">
-                Explore Products
+            <a href="<?= htmlspecialchars($homeData['hero_button_link'] ?? '/shop') ?>" class="magnetic px-10 py-4 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-black transition-all duration-300 tracking-wide uppercase shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] inline-block">
+                <?= htmlspecialchars($homeData['hero_button_text'] ?? 'Explore Products') ?>
             </a>
         </div>
     </div>
@@ -112,14 +120,14 @@
 <!-- Our Approach / Core Pillars -->
 <section class="py-40 relative z-10 bg-[#060B09]" id="story-section">
     <div class="container mx-auto px-6">
-        <div class="text-center mb-20 section-header">
-            <div class="text-[#0E8028] font-semibold tracking-widest text-sm uppercase mb-4">Our Technology</div>
-            <h2 class="text-4xl md:text-6xl font-display font-bold mb-6 text-white">Derived From <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B00] to-[#0E8028]">Nature Itself</span></h2>
+        <div class="text-center mb-20 section-header reveal-up">
+            <div class="text-[#0E8028] font-semibold tracking-widest text-sm uppercase mb-4"><?= htmlspecialchars($homeData['story_subtitle'] ?? 'Our Technology') ?></div>
+            <h2 class="text-4xl md:text-6xl font-display font-bold mb-6 text-white"><?= htmlspecialchars($homeData['story_title'] ?? 'Derived From Nature Itself') ?></h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- Pillar 1 -->
-            <div class="glass-panel p-8 rounded-[30px] group hover:border-[#FF6B00]/30 transition-all duration-500 hover:-translate-y-2">
+            <div class="glass-panel p-8 rounded-[30px] group hover:border-[#FF6B00]/30 transition-all duration-500 hover:-translate-y-2 reveal-up">
                 <div class="w-14 h-14 rounded-full bg-[#FF6B00]/10 border border-[#FF6B00]/20 flex items-center justify-center mb-6 text-[#FF6B00] group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(0,255,163,0.1)]">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
                 </div>
@@ -128,7 +136,7 @@
             </div>
 
             <!-- Pillar 2 -->
-            <div class="glass-panel p-8 rounded-[30px] group hover:border-[#0E8028]/30 transition-all duration-500 hover:-translate-y-2">
+            <div class="glass-panel p-8 rounded-[30px] group hover:border-[#0E8028]/30 transition-all duration-500 hover:-translate-y-2 reveal-up">
                 <div class="w-14 h-14 rounded-full bg-[#0E8028]/10 border border-[#0E8028]/20 flex items-center justify-center mb-6 text-[#0E8028] group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(0,240,255,0.1)]">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                 </div>
@@ -137,7 +145,7 @@
             </div>
 
             <!-- Pillar 3 -->
-            <div class="glass-panel p-8 rounded-[30px] group hover:border-gold/30 transition-all duration-500 hover:-translate-y-2">
+            <div class="glass-panel p-8 rounded-[30px] group hover:border-gold/30 transition-all duration-500 hover:-translate-y-2 reveal-up">
                 <div class="w-14 h-14 rounded-full bg-[#FFB000]/10 border border-[#FFB000]/20 flex items-center justify-center mb-6 text-[#FFB000] group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(234,179,8,0.1)]">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
                 </div>
@@ -146,7 +154,7 @@
             </div>
 
             <!-- Pillar 4 -->
-            <div class="glass-panel p-8 rounded-[30px] group hover:border-[#FF6B00]/30 transition-all duration-500 hover:-translate-y-2">
+            <div class="glass-panel p-8 rounded-[30px] group hover:border-[#FF6B00]/30 transition-all duration-500 hover:-translate-y-2 reveal-up">
                 <div class="w-14 h-14 rounded-full bg-[#FF6B00]/10 border border-[#FF6B00]/20 flex items-center justify-center mb-6 text-[#FF6B00] group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(0,255,163,0.1)]">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
                 </div>
@@ -161,7 +169,7 @@
 <section class="py-32 relative z-10 bg-[#030504] border-t border-white/5 overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-[#030504] z-0"></div>
     <div class="container mx-auto px-6 relative z-10">
-        <div class="flex flex-col md:flex-row items-end justify-between mb-16">
+        <div class="flex flex-col md:flex-row items-end justify-between mb-16 reveal-up">
             <div class="max-w-2xl">
                 <div class="text-[#FF6B00] font-bold tracking-widest text-xs uppercase mb-4">Research & Field Data</div>
                 <h2 class="text-4xl md:text-5xl font-display font-black text-white">Latest Field <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#0E8028] to-[#FF6B00]">Innovations</span></h2>
@@ -173,21 +181,21 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="glass-panel rounded-[2.5rem] overflow-hidden shadow-lg shadow-black/50 hover:-translate-y-2 transition-all duration-500">
-                <img src="/images/pdf_img_p0_1.png" alt="PDF Highlight 1" class="w-full h-64 object-cover" onerror="this.src='https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&q=80&w=600'">
+                <img src="/images/innovation_yield.png" alt="Yield Enhancement Metrics" class="w-full h-64 object-cover">
                 <div class="p-10">
                     <h3 class="text-xl font-bold text-white mb-3">Yield Enhancement Metrics</h3>
                     <p class="text-gray-400 font-light leading-relaxed">Our latest formulations have shown significant improvements in crop yield and soil health across diverse environments.</p>
                 </div>
             </div>
             <div class="glass-panel rounded-[2.5rem] overflow-hidden shadow-lg shadow-black/50 hover:-translate-y-2 transition-all duration-500 md:-translate-y-8">
-                <img src="/images/pdf_img_p0_2.png" alt="PDF Highlight 2" class="w-full h-64 object-cover" onerror="this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600'">
+                <img src="/images/innovation_lab.png" alt="Laboratory Analysis" class="w-full h-64 object-cover">
                 <div class="p-10">
                     <h3 class="text-xl font-bold text-white mb-3">Laboratory Analysis</h3>
                     <p class="text-gray-400 font-light leading-relaxed">State-of-the-art testing guarantees that every batch meets stringent quality and performance standards.</p>
                 </div>
             </div>
             <div class="glass-panel rounded-[2.5rem] overflow-hidden shadow-lg shadow-black/50 hover:-translate-y-2 transition-all duration-500">
-                <img src="/images/pdf_img_p0_3.png" alt="PDF Highlight 3" class="w-full h-64 object-cover" onerror="this.src='https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=600'">
+                <img src="/images/innovation_field.png" alt="Sustainable Field Application" class="w-full h-64 object-cover">
                 <div class="p-10">
                     <h3 class="text-xl font-bold text-white mb-3">Sustainable Field Application</h3>
                     <p class="text-gray-400 font-light leading-relaxed">Direct implementation of our green chemistry reduces environmental footprint while maximizing efficiency.</p>
@@ -201,7 +209,7 @@
 <section class="py-40 relative z-10 bg-[#060B09] border-t border-white/5">
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#030504] to-[#060B09] z-0"></div>
     <div class="container mx-auto px-6 relative z-10">
-        <div class="text-center mb-24 section-header">
+        <div class="text-center mb-24 section-header reveal-up">
             <div class="text-[#FF6B00] font-semibold tracking-widest text-sm uppercase mb-4">ReNu-Biome Catalog</div>
             <h2 class="text-5xl md:text-7xl font-display font-bold mb-8 text-white">Our Product <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B00] to-[#0E8028]">Lines</span></h2>
             <p class="text-gray-400 text-xl max-w-2xl mx-auto font-light">Approved in ND, TX, OR, AZ, GA, FL, MN, MI, PA, WY, NM, MO, NY & many more states.</p>
@@ -214,10 +222,7 @@
                     <div class="absolute top-0 right-0 w-64 h-64 bg-[#FF6B00] opacity-0 filter blur-[80px] group-hover:opacity-20 transition-opacity duration-700"></div>
                     
                     <div class="mb-12 h-48 flex items-center justify-center relative">
-                        <img src="https://cdn.shopify.com/s/files/1/0556/4435/6758/files/12182023_Renu-Biome-Bag-Design-04.png?v=1702932311" alt="Green Nitrogen" class="w-full h-full object-contain relative z-10 group-hover:scale-110 transition-transform duration-700 drop-shadow-2xl" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                        <div class="hidden w-40 h-40 rounded-full border border-[#FF6B00]/20 bg-[#FF6B00]/5 items-center justify-center relative z-10 group-hover:scale-110 group-hover:border-[#FF6B00]/50 transition-all duration-700 shadow-[0_0_30px_rgba(0,255,163,0.05)]">
-                            <span class="text-[#FF6B00] font-bold text-xl">GN</span>
-                        </div>
+                        <img src="/images/green_nitrogen.png" alt="Green Nitrogen" class="w-full h-full object-cover rounded-[20px] shadow-[0_0_40px_rgba(0,255,163,0.2)] relative z-10 group-hover:scale-105 transition-transform duration-700">
                     </div>
                     
                     <div class="mt-auto relative z-20">
@@ -239,10 +244,7 @@
                     <div class="absolute top-0 right-0 w-64 h-64 bg-[#0E8028] opacity-0 filter blur-[80px] group-hover:opacity-20 transition-opacity duration-700"></div>
                     
                     <div class="mb-12 h-48 flex items-center justify-center relative">
-                        <img src="https://cdn.shopify.com/s/files/1/0556/4435/6758/files/12182023_Renu-Biome-Bag-Design-05.png" alt="Peptide Nutrition" class="w-full h-full object-contain relative z-10 group-hover:scale-110 transition-transform duration-700 drop-shadow-2xl" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                        <div class="hidden w-40 h-40 rounded-full border border-[#0E8028]/20 bg-[#0E8028]/5 items-center justify-center relative z-10 group-hover:scale-110 group-hover:border-[#0E8028]/50 transition-all duration-700 shadow-[0_0_30px_rgba(0,240,255,0.05)]">
-                             <span class="text-[#0E8028] font-bold text-xl">PN</span>
-                        </div>
+                        <img src="/images/peptide_nutrition.png" alt="Peptide Nutrition" class="w-full h-full object-cover rounded-[20px] shadow-[0_0_40px_rgba(0,240,255,0.2)] relative z-10 group-hover:scale-105 transition-transform duration-700">
                     </div>
                     
                     <div class="mt-auto relative z-20">
@@ -264,10 +266,7 @@
                     <div class="absolute top-0 right-0 w-64 h-64 bg-[#FFB000] opacity-0 filter blur-[80px] group-hover:opacity-15 transition-opacity duration-700"></div>
                     
                     <div class="mb-12 h-48 flex items-center justify-center relative">
-                        <img src="https://cdn.shopify.com/s/files/1/0556/4435/6758/files/12182023_Renu-Biome-Bag-Design-06.png" alt="Bee Bloom" class="w-full h-full object-contain relative z-10 group-hover:scale-110 transition-transform duration-700 drop-shadow-2xl" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                        <div class="hidden w-40 h-40 rounded-full border border-[#FFB000]/20 bg-[#FFB000]/5 items-center justify-center relative z-10 group-hover:scale-110 group-hover:border-[#FFB000]/50 transition-all duration-700 shadow-[0_0_30px_rgba(234,179,8,0.05)]">
-                            <span class="text-[#FFB000] font-bold text-xl">BB</span>
-                        </div>
+                        <img src="/images/bee_bloom.png" alt="Bee Bloom" class="w-full h-full object-cover rounded-[20px] shadow-[0_0_40px_rgba(234,179,8,0.2)] relative z-10 group-hover:scale-105 transition-transform duration-700">
                     </div>
                     
                     <div class="mt-auto relative z-20">
@@ -289,10 +288,10 @@
 <!-- CTA Section -->
 <section class="py-40 relative z-10 overflow-hidden border-t border-white/5">
     <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-[#014A2E]/20 via-[#060B09] to-[#030504]"></div>
-    <div class="container mx-auto px-6 relative z-10 text-center">
+    <div class="container mx-auto px-6 relative z-10 text-center reveal-up">
         <h2 class="text-5xl md:text-8xl font-display font-bold mb-8 max-w-5xl mx-auto leading-tight drop-shadow-2xl text-white">Based in the <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#0E8028] to-[#FF6B00]">United States of America</span></h2>
         <p class="text-2xl text-gray-400 mb-16 max-w-3xl mx-auto font-light">Partner with ReNu-Biome to combat climate change while securing the future of your yield.</p>
-        <a href="/contact" class="inline-block px-12 py-6 bg-white text-[#030504] font-bold text-xl rounded-full hover:bg-[#FF6B00] hover:text-white hover:shadow-[0_0_60px_rgba(255,107,0,0.5)] transition-all duration-500 transform hover:scale-110 tracking-wide">
+        <a href="/contact" class="magnetic inline-block px-12 py-6 bg-white text-[#030504] font-bold text-xl rounded-full hover:bg-[#FF6B00] hover:text-white hover:shadow-[0_0_60px_rgba(255,107,0,0.5)] transition-all duration-500 transform hover:scale-110 tracking-wide">
             Contact Us Today
         </a>
     </div>
