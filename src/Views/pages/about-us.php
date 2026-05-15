@@ -50,6 +50,46 @@
             
         </div>
 
+        <!-- About Founder Section -->
+        <div class="mt-32 border-t border-white/10 pt-20 hero-element">
+            <div class="glass-panel p-10 md:p-16 rounded-[40px] border border-white/5 relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                <!-- Decorative Elements -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-[#0E8028] rounded-full mix-blend-screen filter blur-[100px] opacity-20"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-[#FF6B00] rounded-full mix-blend-screen filter blur-[100px] opacity-10"></div>
+                
+                <div class="flex flex-col lg:flex-row items-center gap-12 relative z-10">
+                    <!-- Image Container -->
+                    <div class="w-full lg:w-1/3 flex justify-center">
+                        <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-2 border-2 border-dashed border-[#FF6B00]/30 hover:border-[#FF6B00] transition-colors duration-500">
+                            <img src="/images/raj_madam.png" alt="Dr. Raj Madam - Founder & CEO of ReNu-Biome, Plant Genetics Expert" class="w-full h-full object-cover rounded-full shadow-[0_0_30px_rgba(255,107,0,0.2)] grayscale hover:grayscale-0 transition-all duration-700" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400'">
+                            <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-[#0E8028] rounded-full flex items-center justify-center text-white font-bold text-xs tracking-widest uppercase border-4 border-[#060B09] shadow-lg transform hover:scale-110 transition-transform">
+                                CEO
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Content Container -->
+                    <div class="w-full lg:w-2/3">
+                        <div class="text-[#FF6B00] font-bold tracking-[0.2em] text-xs uppercase mb-3">Leadership</div>
+                        <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-2">Dr. Raj Madam</h2>
+                        <h3 class="text-xl text-gray-400 font-light mb-8 italic">Founder & CEO</h3>
+                        
+                        <div class="space-y-6 text-gray-300 font-light leading-relaxed text-lg">
+                            <p>
+                                <strong class="text-white font-medium">Dr. Raj Madam</strong> is a globally recognized authority in <strong class="text-[#0E8028]">plant genetics</strong> and <strong class="text-[#FF6B00]">agricultural biotechnology</strong>. He is dedicated to advancing sustainable farming practices and engineering the future of crop resilience.
+                            </p>
+                            <p>
+                                With a distinguished career serving as the North American Technical Lead for major agricultural distribution networks, his expertise spans continents. His high-impact portfolio includes extensive work across Australia and New Zealand, alongside strategic advisory roles on several crucial EPA-related environmental initiatives.
+                            </p>
+                            <p>
+                                A pioneer in agricultural innovation, Dr. Madam holds multiple patents in perennial poppy cultivation and cutting-edge gene-editing technology. As a renowned global speaker, he frequently shares his insights on specialized crop nutrition and the development of highly sustainable yield programs. He earned his Ph.D. in Life Sciences and Genetics from the University of Tasmania, Australia.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Extracted PDF Images Gallery Section -->
         <div class="mt-32 border-t border-white/10 pt-20">
             <div class="text-center mb-16 hero-element">
